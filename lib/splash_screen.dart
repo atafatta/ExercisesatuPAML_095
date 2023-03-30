@@ -8,7 +8,6 @@ class SplashScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       body: Container(
-        //child: Image.asset('assets/images/cobasatu.png', fit: BoxFit.cover),
         decoration: BoxDecoration(
           image: DecorationImage(
             image: AssetImage('assets/images/cobasatu.png'),
@@ -17,16 +16,8 @@ class SplashScreen extends StatelessWidget {
         ),
         child: Center(
           child: Column(mainAxisAlignment: MainAxisAlignment.center, children: [
-            Container(
-                // height: 200.0,
-                // width: 200.0,
-                // decoration: BoxDecoration(
-                //   image: DecorationImage(
-                //     image: AssetImage('assets/images/logo.png'),
-                //   ),
-                // ),
-                ),
-            SizedBox(height: 30.0),
+            Container(),
+            SizedBox(height: 400.0),
             Container(
               height: 50.0,
               width: double.infinity,
@@ -49,7 +40,7 @@ class SplashScreen extends StatelessWidget {
                   ),
                 ),
                 style: ElevatedButton.styleFrom(
-                  primary: Color.fromARGB(255, 255, 230, 0),
+                  primary: Color.fromARGB(255, 240, 216, 0),
                   shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(20.0),
                   ),
