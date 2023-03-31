@@ -8,6 +8,7 @@ class Register extends StatefulWidget {
 
 class _RegisterState extends State<Register> {
   final _formfield = GlobalKey<FormState>();
+  final usrnameController = TextEditingController();
   final emailController = TextEditingController();
   final passController = TextEditingController();
   bool passToggle = true;
@@ -28,12 +29,23 @@ class _RegisterState extends State<Register> {
                 crossAxisAlignment: CrossAxisAlignment.center,
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  SizedBox(height: 40),
+                  SizedBox(height: 10),
                   Image.asset(
                     "assets/images/logoregister.png",
                   ),
                   Image.asset("assets/images/registertext.png"),
                   SizedBox(height: 50),
+                  TextFormField(
+                    keyboardType: TextInputType.name,
+                    controller: usrnameController,
+                    decoration: InputDecoration(
+                      labelText: "Username",
+                      hintText: "Enter your username",
+                      border: OutlineInputBorder(),
+                      prefixIcon: Icon(Icons.person),
+                    ),
+                  ),
+                  SizedBox(height: 30),
                   TextFormField(
                     keyboardType: TextInputType.emailAddress,
                     controller: emailController,
@@ -63,6 +75,35 @@ class _RegisterState extends State<Register> {
                     decoration: InputDecoration(
                       labelText: "Password",
                       hintText: "Enter your Password",
+                      border: OutlineInputBorder(),
+                      prefixIcon: Icon(Icons.lock),
+                      suffix: InkWell(
+                        onTap: () {
+                          setState(() {
+                            passToggle = !passToggle;
+                          });
+                        },
+                        child: Icon(passToggle
+                            ? Icons.visibility
+                            : Icons.visibility_off),
+                      ),
+                    ),
+                    validator: (value) {
+                      if (value!.isEmpty) {
+                        return "Password cannot be empty";
+                      } else if (passController.text.length < 6) {
+                        return "Password must be at least 6 characters";
+                      }
+                    },
+                  ),
+                  SizedBox(height: 30),
+                  TextFormField(
+                    keyboardType: TextInputType.emailAddress,
+                    controller: passController,
+                    obscureText: passToggle,
+                    decoration: InputDecoration(
+                      labelText: "Re-enter Password",
+                      hintText: "Re-enter your Password",
                       border: OutlineInputBorder(),
                       prefixIcon: Icon(Icons.lock),
                       suffix: InkWell(
