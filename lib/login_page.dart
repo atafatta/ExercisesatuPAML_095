@@ -75,6 +75,13 @@ class _loginpageState extends State<loginpage> {
                             : Icons.visibility_off),
                       ),
                     ),
+                    validator: (value) {
+                      if (value!.isEmpty) {
+                        return "Password cannot be empty";
+                      } else if (passController.text.length < 6) {
+                        return "Password must be at least 6 characters";
+                      }
+                    },
                   ),
                   SizedBox(height: 40),
                   InkWell(
