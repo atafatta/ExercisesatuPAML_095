@@ -18,10 +18,10 @@ class _loginpageState extends State<loginpage> {
           padding: EdgeInsets.symmetric(horizontal: 0, vertical: 0),
           child: Form(
             child: Column(
-                crossAxisAlignment: CrossAxisAlignment.center,
-                mainAxisAlignment: MainAxisAlignment.center,
+                // crossAxisAlignment: CrossAxisAlignment.center,
+                // mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  Image.asset("assets/images/loginform.png"),
+                  Image.asset("assets/images/pokepng.png"),
                   SizedBox(height: 50),
                   TextFormField(
                     keyboardType: TextInputType.emailAddress,
@@ -30,7 +30,7 @@ class _loginpageState extends State<loginpage> {
                       border: OutlineInputBorder(),
                       prefixIcon: Icon(Icons.email),
                     ),
-                  )
+                  ),
                 ]),
           ),
         ),
