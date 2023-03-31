@@ -25,10 +25,8 @@ class SplashScreen extends StatelessWidget {
               child: ElevatedButton(
                 onPressed: () {
                   // Add your onPressed function here
-                  Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                          builder: (context) => const loginpage()));
+                  Navigator.push(context,
+                      MaterialPageRoute(builder: (context) => loginpage()));
                 },
                 child: Text(
                   'Get Started',
