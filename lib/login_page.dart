@@ -42,11 +42,23 @@ class _loginpageState extends State<loginpage> {
                       border: OutlineInputBorder(),
                       prefixIcon: Icon(Icons.email),
                     ),
+                    validator: (value) {
+                      if (value!.isEmpty) {
+                        return "Email cannot be empty";
+                      }
+                      bool emailValid =
+                          RegExp(r'^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$')
+                              .hasMatch(value);
+                      if (!emailValid) {
+                        return "Enter a valid email";
+                      }
+                    },
                   ),
-                  SizedBox(height: 20),
+                  SizedBox(height: 30),
                   TextFormField(
                     keyboardType: TextInputType.emailAddress,
                     controller: passController,
+                    obscureText: passToggle,
                     decoration: InputDecoration(
                       labelText: "Password",
                       hintText: "Enter your Password",
@@ -66,12 +78,19 @@ class _loginpageState extends State<loginpage> {
                   ),
                   SizedBox(height: 40),
                   InkWell(
-                    onTap: () {},
+                    onTap: () {
+                      //validation
+                      if (_formfield.currentState!.validate()) {
+                        print("Success!");
+                        emailController.clear();
+                        passController.clear();
+                      }
+                    },
                     child: Container(
                       height: 50,
                       decoration: BoxDecoration(
                         color: Color.fromARGB(255, 240, 216, 0),
-                        borderRadius: BorderRadius.circular(30),
+                        borderRadius: BorderRadius.circular(15),
                       ),
                       child: Center(
                         child: Text(
