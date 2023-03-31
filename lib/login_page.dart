@@ -1,3 +1,4 @@
+import 'package:exercise_satu/register_page.dart';
 import 'package:flutter/material.dart';
 
 class loginpage extends StatefulWidget {
@@ -118,7 +119,13 @@ class _loginpageState extends State<loginpage> {
                         style: TextStyle(fontSize: 17),
                       ),
                       TextButton(
-                        onPressed: () {},
+                        onPressed: () {
+                          // Add your onPressed function here
+                          Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) => Register()));
+                        },
                         child: Text(
                           "Sign Up",
                           style: TextStyle(
