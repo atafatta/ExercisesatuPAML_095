@@ -22,11 +22,15 @@ class _loginpageState extends State<loginpage> {
         child: Padding(
           padding: EdgeInsets.symmetric(horizontal: 0, vertical: 0),
           child: Form(
+            key: _formfield,
             child: Column(
                 crossAxisAlignment: CrossAxisAlignment.center,
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  Image.asset("assets/images/pokepng.png"),
+                  SizedBox(height: 40),
+                  Image.asset(
+                    "assets/images/pokepng.png",
+                  ),
                   Image.asset("assets/images/text.png"),
                   SizedBox(height: 50),
                   TextFormField(
@@ -48,7 +52,54 @@ class _loginpageState extends State<loginpage> {
                       hintText: "Enter your Password",
                       border: OutlineInputBorder(),
                       prefixIcon: Icon(Icons.lock),
+                      suffix: InkWell(
+                        onTap: () {
+                          setState(() {
+                            passToggle = !passToggle;
+                          });
+                        },
+                        child: Icon(passToggle
+                            ? Icons.visibility
+                            : Icons.visibility_off),
+                      ),
                     ),
+                  ),
+                  SizedBox(height: 40),
+                  InkWell(
+                    onTap: () {},
+                    child: Container(
+                      height: 50,
+                      decoration: BoxDecoration(
+                        color: Color.fromARGB(255, 240, 216, 0),
+                        borderRadius: BorderRadius.circular(30),
+                      ),
+                      child: Center(
+                        child: Text(
+                          "Sign in",
+                          style: TextStyle(
+                              color: Colors.white,
+                              fontSize: 20,
+                              fontWeight: FontWeight.bold),
+                        ),
+                      ),
+                    ),
+                  ),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      Text(
+                        "Don't Have Account?",
+                        style: TextStyle(fontSize: 17),
+                      ),
+                      TextButton(
+                        onPressed: () {},
+                        child: Text(
+                          "Sign Up",
+                          style: TextStyle(
+                              fontSize: 18, fontWeight: FontWeight.bold),
+                        ),
+                      )
+                    ],
                   ),
                 ]),
           ),
