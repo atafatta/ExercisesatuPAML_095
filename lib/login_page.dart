@@ -21,7 +21,7 @@ class _loginpageState extends State<loginpage> {
       ),
       body: SingleChildScrollView(
         child: Padding(
-          padding: EdgeInsets.symmetric(horizontal: 0, vertical: 0),
+          padding: EdgeInsets.symmetric(horizontal: 0, vertical: 10),
           child: Form(
             key: _formfield,
             child: Column(
@@ -95,9 +95,10 @@ class _loginpageState extends State<loginpage> {
                       }
                     },
                     child: Container(
+                      margin: EdgeInsets.symmetric(horizontal: 30.0),
                       height: 50,
                       decoration: BoxDecoration(
-                        color: Color.fromARGB(255, 240, 216, 0),
+                        color: Color.fromARGB(255, 14, 61, 163),
                         borderRadius: BorderRadius.circular(15),
                       ),
                       child: Center(

@@ -10,7 +10,7 @@ class SplashScreen extends StatelessWidget {
       body: Container(
         decoration: BoxDecoration(
           image: DecorationImage(
-            image: AssetImage('assets/images/cobasatu.png'),
+            image: AssetImage('assets/images/bgblue.png'),
             fit: BoxFit.cover,
           ),
         ),
@@ -38,7 +38,7 @@ class SplashScreen extends StatelessWidget {
                   ),
                 ),
                 style: ElevatedButton.styleFrom(
-                  primary: Color.fromARGB(255, 240, 216, 0),
+                  primary: Color.fromARGB(255, 14, 61, 163),
                   shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(20.0),
                   ),

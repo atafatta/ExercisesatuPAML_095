@@ -35,9 +35,13 @@ class _RegisterState extends State<Register> {
                   SizedBox(height: 10),
                   Image.asset(
                     "assets/images/logoregister.png",
+                    height: 100,
                   ),
-                  Image.asset("assets/images/registertext.png"),
-                  SizedBox(height: 30),
+                  Image.asset(
+                    "assets/images/registertext.png",
+                    height: 80,
+                  ),
+                  SizedBox(height: 20),
                   TextFormField(
                       keyboardType: TextInputType.name,
                       controller: usrnameController,
@@ -52,7 +56,7 @@ class _RegisterState extends State<Register> {
                           return "Username is empty";
                         }
                       }),
-                  SizedBox(height: 30),
+                  SizedBox(height: 20),
                   TextFormField(
                     keyboardType: TextInputType.emailAddress,
                     controller: emailController,
@@ -74,7 +78,7 @@ class _RegisterState extends State<Register> {
                       }
                     },
                   ),
-                  SizedBox(height: 30),
+                  SizedBox(height: 20),
                   TextFormField(
                     keyboardType: TextInputType.emailAddress,
                     controller: passController,
@@ -103,7 +107,7 @@ class _RegisterState extends State<Register> {
                       }
                     },
                   ),
-                  SizedBox(height: 30),
+                  SizedBox(height: 20),
                   TextFormField(
                     keyboardType: TextInputType.emailAddress,
                     controller: repasController,
@@ -134,7 +138,7 @@ class _RegisterState extends State<Register> {
                       }
                     },
                   ),
-                  SizedBox(height: 40),
+                  SizedBox(height: 30),
                   InkWell(
                     onTap: () {
                       //validation
@@ -153,8 +157,9 @@ class _RegisterState extends State<Register> {
                     },
                     child: Container(
                       height: 50,
+                      margin: EdgeInsets.symmetric(horizontal: 50.0),
                       decoration: BoxDecoration(
-                        color: Color.fromARGB(255, 240, 216, 0),
+                        color: Color.fromARGB(255, 14, 61, 163),
                         borderRadius: BorderRadius.circular(15),
                       ),
                       child: Center(
