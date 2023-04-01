@@ -21,7 +21,7 @@ class _loginpageState extends State<loginpage> {
       ),
       body: SingleChildScrollView(
         child: Padding(
-          padding: EdgeInsets.symmetric(horizontal: 0, vertical: 10),
+          padding: EdgeInsets.symmetric(horizontal: 25, vertical: 0),
           child: Form(
             key: _formfield,
             child: Column(
@@ -38,20 +38,14 @@ class _loginpageState extends State<loginpage> {
                     keyboardType: TextInputType.emailAddress,
                     controller: emailController,
                     decoration: InputDecoration(
-                      labelText: "Email",
-                      hintText: "Enter your email",
+                      labelText: "Username",
+                      hintText: "Enter your username",
                       border: OutlineInputBorder(),
-                      prefixIcon: Icon(Icons.email),
+                      prefixIcon: Icon(Icons.person),
                     ),
                     validator: (value) {
                       if (value!.isEmpty) {
-                        return "Email cannot be empty";
-                      }
-                      bool emailValid =
-                          RegExp(r'^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$')
-                              .hasMatch(value);
-                      if (!emailValid) {
-                        return "Enter a valid email";
+                        return "Username cannot be empty";
                       }
                     },
                   ),
