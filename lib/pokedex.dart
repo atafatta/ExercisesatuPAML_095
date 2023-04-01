@@ -112,7 +112,7 @@ class _PokedexPageState extends State<PokedexPage> {
                           decoration: BoxDecoration(
                             shape: BoxShape.rectangle,
                             borderRadius: BorderRadius.circular(10),
-                            color: Colors.red,
+                            color: Colors.redAccent,
                           ),
                           child: Image.network(
                             'https://assets.pokemon.com/assets/cms2/img/pokedex/full/005.png',
@@ -126,10 +126,91 @@ class _PokedexPageState extends State<PokedexPage> {
                             children: [
                               Row(
                                 children: [
-                                  const Text('#005',
+                                  const Text('#0005',
                                       style: TextStyle(color: Colors.grey)),
                                   Container(width: 10),
                                   Text('Charmeleon',
+                                      style: TextStyle(
+                                          color: Colors.black,
+                                          fontWeight: FontWeight.bold))
+                                ],
+                              ),
+                              SizedBox.fromSize(
+                                size: Size(5, 5),
+                              ),
+                              Row(
+                                children: [
+                                  Container(
+                                      width: 50, // set width to 200 pixels
+                                      height: 20,
+                                      decoration: BoxDecoration(
+                                          color: Colors.orange,
+                                          borderRadius:
+                                              BorderRadius.circular(5)),
+                                      child: Align(
+                                        child: const Text('Fire',
+                                            style: TextStyle(
+                                                color: Colors.white,
+                                                fontWeight: FontWeight.bold)),
+                                      ) // set height to 100 pixels
+                                      ),
+                                ],
+                              ),
+                              SizedBox.fromSize(
+                                size: Size(5, 5),
+                              ),
+                              Row(
+                                children: [
+                                  const Text(
+                                      "It has a barbaric nature. In battle, \nit whips its fiery tail around and\nslashes away with sharp claws.",
+                                      style: TextStyle(
+                                        fontSize: 12,
+                                        color: Colors.grey,
+                                      ))
+                                ],
+                              )
+                            ],
+                          ),
+                        ),
+                      ],
+                    ),
+                  ),
+                ),
+                SizedBox(
+                  height: 170,
+                  child: Card(
+                    elevation: 4,
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(5),
+                    ),
+                    child: Row(
+                      crossAxisAlignment: CrossAxisAlignment.center,
+                      children: [
+                        Container(
+                          margin: EdgeInsets.only(top: 20, left: 30),
+                          width: 100,
+                          height: 100,
+                          decoration: BoxDecoration(
+                            shape: BoxShape.rectangle,
+                            borderRadius: BorderRadius.circular(10),
+                            color: Colors.lightGreenAccent,
+                          ),
+                          child: Image.network(
+                            'https://assets.pokemon.com/assets/cms2/img/pokedex/full/455.png',
+                          ),
+                        ),
+                        Container(
+                          margin: EdgeInsets.only(top: 20, left: 20),
+                          alignment: Alignment.topLeft,
+                          child: Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              Row(
+                                children: [
+                                  const Text('#0455',
+                                      style: TextStyle(color: Colors.grey)),
+                                  Container(width: 10),
+                                  Text('Carnivine',
                                       style: TextStyle(
                                           color: Colors.black,
                                           fontWeight: FontWeight.bold))
@@ -154,22 +235,6 @@ class _PokedexPageState extends State<PokedexPage> {
                                                 fontWeight: FontWeight.bold)),
                                       ) // set height to 100 pixels
                                       ),
-                                  Container(width: 5),
-                                  Container(
-                                      margin: EdgeInsets.only(left: 5),
-                                      alignment: Alignment.topLeft,
-                                      width: 50, // set width to 200 pixels
-                                      height: 20,
-                                      decoration: BoxDecoration(
-                                          color: Colors.purple,
-                                          borderRadius:
-                                              BorderRadius.circular(5)),
-                                      child: Align(
-                                        child: const Text('Poison',
-                                            style: TextStyle(
-                                                color: Colors.white,
-                                                fontWeight: FontWeight.bold)),
-                                      )),
                                 ],
                               ),
                               SizedBox.fromSize(
@@ -178,7 +243,7 @@ class _PokedexPageState extends State<PokedexPage> {
                               Row(
                                 children: [
                                   const Text(
-                                      "It has a barbaric nature. In battle, \nit whips its fiery tail around and\nslashes away with sharp claws.",
+                                      "It attracts prey with its sweet-smelling \n saliva,then chomps down. It takes \na whole day to eat prey.",
                                       style: TextStyle(
                                         fontSize: 12,
                                         color: Colors.grey,
