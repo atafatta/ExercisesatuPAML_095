@@ -12,28 +12,55 @@ class PokedexPage extends StatelessWidget {
         title: Text("Pokedex"),
         centerTitle: true,
       ),
-      body: SingleChildScrollView(
-          child: Padding(
-        padding: EdgeInsets.symmetric(
-          horizontal: 0,
-          vertical: 80,
-        ),
-        child: Container(
-          height: 50,
-          margin: EdgeInsets.symmetric(horizontal: 50.50),
-          decoration: BoxDecoration(
-            color: Colors.blueGrey,
-            borderRadius: BorderRadius.circular(20),
+      body: SafeArea(
+        child: GestureDetector(
+          child: Column(
+            mainAxisSize: MainAxisSize.max,
+            children: [
+              Padding(
+                padding: EdgeInsetsDirectional.fromSTEB(10, 16, 10, 16),
+                child: Row(
+                  mainAxisSize: MainAxisSize.max,
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    Text(
+                      'Hello, Trainers !',
+                    ),
+                    Icon(
+                      Icons.person_2_rounded,
+                      color: Colors.black,
+                      size: 40,
+                    ),
+                  ],
+                ),
+              ),
+              Container(
+                padding: EdgeInsets.symmetric(horizontal: 16, vertical: 8),
+                margin: EdgeInsets.symmetric(horizontal: 16, vertical: 8),
+                decoration: BoxDecoration(
+                  color: Colors.white,
+                  borderRadius: BorderRadius.circular(16),
+                  boxShadow: [
+                    BoxShadow(
+                      color: Colors.grey.withOpacity(0.3),
+                      spreadRadius: 2,
+                      blurRadius: 5,
+                      offset: Offset(0, 3),
+                    ),
+                  ],
+                ),
+                child: TextField(
+                  decoration: InputDecoration(
+                    hintText: "Search for Pokemon",
+                    icon: Icon(Icons.search),
+                    border: InputBorder.none,
+                  ),
+                ),
+              ),
+            ],
           ),
-          child: TextField(
-            decoration: InputDecoration(
-              hintText: 'Search for a Pokemon',
-              border: InputBorder.none,
-              contentPadding: EdgeInsets.only(left: 20),
-            ),
-          ),
         ),
-      )),
+      ),
     );
   }
 }
