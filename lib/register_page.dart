@@ -25,7 +25,10 @@ class _RegisterState extends State<Register> {
       ),
       body: SingleChildScrollView(
         child: Padding(
-          padding: EdgeInsets.symmetric(horizontal: 0, vertical: 0),
+          padding: EdgeInsets.symmetric(
+            horizontal: 25,
+            vertical: 0,
+          ),
           child: Form(
             key: _formfield,
             child: Column(
@@ -151,7 +154,10 @@ class _RegisterState extends State<Register> {
                         Navigator.push(
                           context,
                           MaterialPageRoute(
-                              builder: (context) => Pokedexpage()),
+                            builder: (context) => PokedexPage(
+                              username: usrnameController.text,
+                            ),
+                          ),
                         );
                       }
                     },
