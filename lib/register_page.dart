@@ -1,3 +1,5 @@
+import 'package:exercise_satu/login_page.dart';
+import 'package:exercise_satu/pokedex.dart';
 import 'package:exercise_satu/register_page.dart';
 import 'package:flutter/material.dart';
 
@@ -11,13 +13,14 @@ class _RegisterState extends State<Register> {
   final usrnameController = TextEditingController();
   final emailController = TextEditingController();
   final passController = TextEditingController();
+  final repasController = TextEditingController();
   bool passToggle = true;
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("Login Page"),
+        title: Text("Register Page"),
         centerTitle: true,
       ),
       body: SingleChildScrollView(
@@ -34,17 +37,21 @@ class _RegisterState extends State<Register> {
                     "assets/images/logoregister.png",
                   ),
                   Image.asset("assets/images/registertext.png"),
-                  SizedBox(height: 50),
+                  SizedBox(height: 30),
                   TextFormField(
-                    keyboardType: TextInputType.name,
-                    controller: usrnameController,
-                    decoration: InputDecoration(
-                      labelText: "Username",
-                      hintText: "Enter your username",
-                      border: OutlineInputBorder(),
-                      prefixIcon: Icon(Icons.person),
-                    ),
-                  ),
+                      keyboardType: TextInputType.name,
+                      controller: usrnameController,
+                      decoration: InputDecoration(
+                        labelText: "Username",
+                        hintText: "Enter your username",
+                        border: OutlineInputBorder(),
+                        prefixIcon: Icon(Icons.person),
+                      ),
+                      validator: (value) {
+                        if (value!.isEmpty) {
+                          return "Username is empty";
+                        }
+                      }),
                   SizedBox(height: 30),
                   TextFormField(
                     keyboardType: TextInputType.emailAddress,
@@ -99,7 +106,7 @@ class _RegisterState extends State<Register> {
                   SizedBox(height: 30),
                   TextFormField(
                     keyboardType: TextInputType.emailAddress,
-                    controller: passController,
+                    controller: repasController,
                     obscureText: passToggle,
                     decoration: InputDecoration(
                       labelText: "Re-enter Password",
@@ -122,6 +129,8 @@ class _RegisterState extends State<Register> {
                         return "Password cannot be empty";
                       } else if (passController.text.length < 6) {
                         return "Password must be at least 6 characters";
+                      } else if (value != passController.text) {
+                        return "Password does not match";
                       }
                     },
                   ),
@@ -130,9 +139,16 @@ class _RegisterState extends State<Register> {
                     onTap: () {
                       //validation
                       if (_formfield.currentState!.validate()) {
-                        print("Success!");
+                        usrnameController.clear();
                         emailController.clear();
                         passController.clear();
+                        repasController.clear();
+
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) => Pokedexpage()),
+                        );
                       }
                     },
                     child: Container(
