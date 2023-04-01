@@ -399,31 +399,13 @@ class _PokedexPageState extends State<PokedexPage> {
                                       ),
                                 ],
                               ),
-                              Row(
-                                children: [
-                                  Container(
-                                      width: 50, // set width to 200 pixels
-                                      height: 20,
-                                      decoration: BoxDecoration(
-                                          color: Colors.blue,
-                                          borderRadius:
-                                              BorderRadius.circular(5)),
-                                      child: Align(
-                                        child: const Text('Dragon',
-                                            style: TextStyle(
-                                                color: Colors.white,
-                                                fontWeight: FontWeight.bold)),
-                                      ) // set height to 100 pixels
-                                      ),
-                                ],
-                              ),
                               SizedBox.fromSize(
                                 size: Size(5, 5),
                               ),
                               Row(
                                 children: [
                                   const Text(
-                                      "It attracts prey with its sweet-smelling \n saliva,then chomps down. It takes \na whole day to eat prey.",
+                                      "It is said that somewhere in the ocean \n lies an island where these gather. \nOnly they live there.",
                                       style: TextStyle(
                                         fontSize: 12,
                                         color: Colors.grey,
