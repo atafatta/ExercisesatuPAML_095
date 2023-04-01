@@ -154,10 +154,7 @@ class _RegisterState extends State<Register> {
                         Navigator.push(
                           context,
                           MaterialPageRoute(
-                            builder: (context) => PokedexPage(
-                              username: usrnameController.text,
-                            ),
-                          ),
+                              builder: (context) => PokedexPage()),
                         );
                       }
                     },
