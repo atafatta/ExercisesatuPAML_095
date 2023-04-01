@@ -257,6 +257,87 @@ class _PokedexPageState extends State<PokedexPage> {
                     ),
                   ),
                 ),
+                SizedBox(
+                  height: 170,
+                  child: Card(
+                    elevation: 4,
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(5),
+                    ),
+                    child: Row(
+                      crossAxisAlignment: CrossAxisAlignment.center,
+                      children: [
+                        Container(
+                          margin: EdgeInsets.only(top: 20, left: 30),
+                          width: 100,
+                          height: 100,
+                          decoration: BoxDecoration(
+                            shape: BoxShape.rectangle,
+                            borderRadius: BorderRadius.circular(10),
+                            color: Colors.purple,
+                          ),
+                          child: Image.network(
+                            'https://assets.pokemon.com/assets/cms2/img/pokedex/full/150.png',
+                          ),
+                        ),
+                        Container(
+                          margin: EdgeInsets.only(top: 20, left: 20),
+                          alignment: Alignment.topLeft,
+                          child: Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              Row(
+                                children: [
+                                  const Text('#0150',
+                                      style: TextStyle(color: Colors.grey)),
+                                  Container(width: 10),
+                                  Text('Mewtwo',
+                                      style: TextStyle(
+                                          color: Colors.black,
+                                          fontWeight: FontWeight.bold))
+                                ],
+                              ),
+                              SizedBox.fromSize(
+                                size: Size(5, 5),
+                              ),
+                              Row(
+                                children: [
+                                  Container(
+                                      width: 50, // set width to 200 pixels
+                                      height: 20,
+                                      decoration: BoxDecoration(
+                                          color: Colors.pinkAccent,
+                                          borderRadius:
+                                              BorderRadius.circular(5)),
+                                      child: Align(
+                                        child: const Text('Psychic',
+                                            style: TextStyle(
+                                                color: Colors.white,
+                                                fontWeight: FontWeight.bold)),
+                                      ) // set height to 100 pixels
+                                      ),
+                                ],
+                              ),
+                              SizedBox.fromSize(
+                                size: Size(5, 5),
+                              ),
+                              Row(
+                                children: [
+                                  const Text(
+                                      "It attracts prey with its sweet-smelling \n saliva,then chomps down. It takes \na whole day to eat prey.",
+                                      style: TextStyle(
+                                        fontSize: 12,
+                                        color: Colors.grey,
+                                      ))
+                                ],
+                              )
+                            ],
+                          ),
+                        ),
+                      ],
+                    ),
+                  ),
+                ),
               ],
             ),
           ),
